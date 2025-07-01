@@ -212,7 +212,119 @@ Cognizant-Week2/
 │ └── exception_handling.sql
 
 
+## Week 3: Spring Boot, Spring Data JPA, and SQL Server Integration
+
+This week focuses on building backend applications using **Spring Boot** and **Spring Data JPA**, integrated with a **SQL Server database**. All development and testing were done using **Visual Studio Code** and **Microsoft SQL Server Management Studio (SSMS)**.
+
 ---
+
+## Contents
+
+### 1. Spring Boot Project Setup
+
+This section covers the creation and configuration of a Spring Boot project using [Spring Initializr](https://start.spring.io/), including:
+
+- **Group**: `com.cognizant`
+- **Artifact**: `orm-learn`
+- **Description**: `Demo project for Spring Data JPA and Hibernate`
+- **Dependencies**:
+  - Spring Data JPA
+  - Spring Boot DevTools
+  - SQL Server Driver (added manually if not listed)
+
+#### Steps:
+- Generated the project as a Maven project.
+- Imported the project into VS Code.
+- Configured `application.properties` to connect to the local SQL Server instance (`SQLEXPRESS01`).
+- Verified the Java SDK path and Maven environment.
+
+---
+
+### 2. SQL Server Schema and Table Creation
+
+This section includes SQL scripts used to create the database schema and required tables using SSMS.
+
+sql```
+CREATE DATABASE ormlearn;
+GO
+
+USE ormlearn;
+
+CREATE TABLE country (
+    code VARCHAR(2) PRIMARY KEY,
+    name VARCHAR(50)
+);
+
+INSERT INTO country VALUES ('IN', 'India'), ('US', 'United States of America');
+
+
+---
+3. Entity and Repository Creation
+Country.java (com.cognizant.ormlearn.model)
+Annotated with @Entity, @Table, @Id, and @Column
+
+Fields: code, name
+
+CountryRepository.java (com.cognizant.ormlearn.repository)
+Extends JpaRepository<Country, String>
+
+Annotated with @Repository
+
+4. Service Layer Implementation
+CountryService.java (com.cognizant.ormlearn.service)
+Annotated with @Service
+
+Method: getAllCountries()
+
+Uses @Transactional for transaction management
+
+5. Application Testing
+OrmLearnApplication.java
+Loads Spring context
+
+Retrieves CountryService bean
+
+Invokes testGetAllCountries() to fetch data
+
+Uses SLF4J logger for flow tracking
+
+Technologies Used
+Languages: Java, SQL
+
+Frameworks: Spring Boot, Spring Data JPA
+
+Database: Microsoft SQL Server
+
+Tools: Visual Studio Code, SSMS
+
+Build Tool: Maven
+
+Logging: SLF4J
+
+How to Run
+Start SQL Server and ensure ormlearn database is running.
+
+Open the project in VS Code.
+
+Configure JDK path if needed.
+
+Run the application using:
+mvn spring-boot:run
+Cognizant-Week3/
+│
+├── src/
+│   ├── main/java/com/cognizant/ormlearn/
+│   │   ├── OrmLearnApplication.java
+│   │   ├── model/Country.java
+│   │   ├── repository/CountryRepository.java
+│   │   └── service/CountryService.java
+│   └── resources/
+│       └── application.properties
+│
+├── pom.xml
+├── mvnw, mvnw.cmd
+└── README.md
+
 
 ## License
 
