@@ -329,4 +329,83 @@ Cognizant-Week3/
 ## License
 
 This repository is part of Cognizant’s Deep Skilling Initiative and is intended solely for training and educational purposes.
+# Week 4
+
+## Overview
+This week includes a comprehensive set of Spring REST and JWT hands-on exercises. The goal is to implement a Spring Boot application with RESTful endpoints, XML-based configuration for Spring Core features, and JWT-based authentication. Integration with Angular components for UI is also considered.
+
+---
+
+## 🧪 Hands-On Tasks
+
+### 🔹 1. Spring Boot Setup
+- Create a Spring project using [https://start.spring.io](https://start.spring.io)
+- Add dependencies: Spring Boot DevTools, Spring Web
+- Import into Eclipse and build using Maven
+- Understand `@SpringBootApplication`, `pom.xml`, and the folder structure
+
+---
+
+### 🔹 2. Spring Core XML Configurations
+- **Date Format Bean**: Define `SimpleDateFormat` in XML (`date-format.xml`)
+- **Countries List**: Define `Country` beans and list them using XML (`country.xml`)
+- Use `ApplicationContext` and `getBean()` to retrieve and display data
+
+---
+
+### 🔹 3. RESTful Services
+#### ➤ Hello World Endpoint
+- URL: `/hello`
+- Method: `GET`
+- Returns: `"Hello World!!"`
+
+#### ➤ Country Details Service
+- URL: `/country`
+- Returns: `{"code": "IN", "name": "India"}`
+
+#### ➤ Country by Code
+- URL: `/countries/{code}`
+- Case-insensitive search for countries from XML
+
+---
+
+### 🔹 4. REST - Employee Module
+- Load employee data and departments using XML (`employee.xml`)
+- Create REST APIs to serve employee list and department list
+- Connect Angular frontend to the REST backend
+- Use:
+  - `EmployeeController`, `EmployeeService`, `EmployeeDao`
+  - `DepartmentController`, `DepartmentService`, `DepartmentDao`
+
+---
+
+### 🔹 5. JWT Authentication
+- Create a service to return a JWT upon valid credentials
+- Endpoint: `POST /authenticate` (use basic auth)
+- Generate token using secret key and expiration
+- Files involved:
+  - `SecurityConfig.java`
+  - `AuthController.java`
+  - `JwtService.java`
+  - `JwtAuthApplication.java`
+
+---
+
+## ✅ Sample cURL for JWT
+``bash
+curl -s -u user:pwd http://localhost:8090/authenticate
+ Tools Used
+Spring Boot
+
+Maven
+
+Spring Web, Spring Core
+
+Postman, Chrome Dev Tools
+
+Angular (for frontend)
+
+---
+
+
 
