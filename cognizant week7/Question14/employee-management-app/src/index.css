@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+.app-container {
+  padding: 2rem;
+  min-height: 100vh;
+  transition: all 0.4s ease;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+.toggle-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #0a74da;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.toggle-btn:hover {
+  background-color: #094ea0;
+}
+
+.employee-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, color 0.3s;
+}
+
+.card.light {
+  background-color: #fff;
+  color: #000;
+}
+
+.card.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.action-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.action-btn.light {
+  background-color: #0a74da;
+  color: white;
+}
+
+.action-btn.dark {
+  background-color: #f0ad4e;
+  color: black;
+}
+
+.app-container.light {
+  background-color: #f2f2f2;
+  color: black;
+}
+
+.app-container.dark {
+  background-color: #1c1c1c;
+  color: white;
+}
