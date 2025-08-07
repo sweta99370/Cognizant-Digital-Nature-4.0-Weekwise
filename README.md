@@ -391,7 +391,7 @@ This week includes a comprehensive set of Spring REST and JWT hands-on exercises
 
 ---
 
-## ✅ Sample cURL for JWT
+##  Sample cURL for JWT
 ``bash
 curl -s -u user:pwd http://localhost:8090/authenticate
  Tools Used
@@ -406,6 +406,128 @@ Postman, Chrome Dev Tools
 Angular (for frontend)
 
 ---
+# Week 5: Spring Cloud Microservices Setup
+
+This repository contains multiple Spring Boot microservices built during **Week 5**, demonstrating key Spring Cloud concepts:
+
+- **Account Service** – Provides dummy account data
+- **Loan Service** – Provides dummy loan data
+- **Eureka Discovery Server** – Manages service registry
+- **Greet Service** – A simple service returning "Hello World"
+- **API Gateway** – Routes requests and logs incoming traffic
+
+---
+
+##  Services Overview
+
+| Service                     | Port | Features                                                                            |
+|-----------------------------|------|-------------------------------------------------------------------------------------|
+| **Eureka Discovery Server** | 8761 | Runs with `@EnableEurekaServer`; no self-registration or registry fetch             |
+| **Account Service**         | 8080 | `@EnableDiscoveryClient`; registers as `account-service`                            |
+| **Loan Service**            | 8081 | `@EnableDiscoveryClient`; registers as `loan-service`                               |
+| **Greet Service**           | 8082 | `@EnableDiscoveryClient`; registers as `greet-service`; exposes `GET /greet`        |
+| **API Gateway**             | 9090 | Spring Cloud Gateway; routes to services; includes a global filter for logging      |
+
+---
+
+##  Setup Instructions
+
+### 1. Open the project in VS Code
+Extract this repo and open the root folder in **Visual Studio Code**.
+
+### 2. Build the services
+In separate terminals, run Maven build for each service:
+
+cd <service-folder>
+./mvnw clean package
+
+# Week 6 – Huffman Coding & React Setup
+
+##  Objective
+This week focused on exploring and organizing Huffman coding resources and setting up a React-based project for a Cohort Dashboard.
+
+---
+
+##  Folder Organization
+
+###  Created Directory Structure:
+Moved and organized files using PowerShell to maintain a clean project layout.
+
+powershell
+Move-Item -Path "$HOME\OneDrive\Documents\huffman-master[1]\myfirstreact" `
+  -Destination "$HOME\OneDrive\Desktop\Cognizant-Digital-Nature-4.0-Weekwise\cognizant week6"
+
+  # Week 7 – React Context API & Routing (Employee Management App)
+
+## Overview
+
+This week's focus is on the **React Context API** and **Routing** within a React application. You will learn how to effectively share data across components without prop drilling and how to set up routing using React Router.
+
+---
+
+## Objectives
+
+- Explain the need and benefits of React Context API.
+- Create and use a Context in React.
+- Understand the difference between Provider and Consumer.
+- Avoid prop drilling by using Context.
+- Understand the types of Router components used in React.
+- Setup routing in a React project.
+
+---
+
+## Prerequisites
+
+Ensure the following tools are installed:
+
+- Node.js
+- npm (comes with Node.js)
+- Visual Studio Code
+
+---
+
+## Instructions
+
+### Step 1: Open the Project in VS Code
+
+1. Unzip the provided `employee-management-app.zip` folder.
+2. Open the unzipped folder in **Visual Studio Code**.
+
+### Step 2: Install Dependencies
+
+Run the following command to install required packages:
+
+bash
+npm install
+
+# Week 8 - Git Hands-On Labs
+
+## Overview
+
+This week's lab exercises focused on developing a strong foundation in version control using Git. The tasks covered local configuration, branch management, merge conflict resolution, `.gitignore` usage, and interactions with remote repositories like GitHub. The goal was to simulate professional development workflows used in real projects.
+
+---
+
+## Objectives
+
+- Configure Git environment and integrate Notepad++ as the default editor
+- Understand and apply `.gitignore` to exclude files/folders
+- Create, switch, and manage branches
+- Perform merging and resolve merge conflicts manually and visually
+- Push changes to remote repositories
+- Clean up branches and track repository history
+
+---
+
+## Lab Exercises
+
+### 1. Git Setup and Configuration
+
+- Verified Git installation using:
+  ```bash
+  git --version
+
+
 
 
 
